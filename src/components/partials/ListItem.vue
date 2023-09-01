@@ -1,24 +1,26 @@
-<script setup></script>
+<script setup>
+const props = defineProps(['notes', 'title', 'icon', 'type'])
+</script>
 
 <template>
-    <h4 class="rs__sidebar-title">
-        <span class="rs__sidebar-title-note-icon material-symbols-outlined"
-            >notes</span
-        >
-        All Notes
+    <h4
+        class="rs__sidebar-title"
+        v-if="'list' === type"
+    >
+        <span class="rs__sidebar-title-note-icon material-symbols-outlined">{{
+            icon
+        }}</span>
+        {{ title }}
     </h4>
-    <ul class="rs__note-list">
-        <li>
-            <p>Note One</p>
-        </li>
-        <li>
-            <p>Note Two</p>
-        </li>
-        <li>
-            <p>Note Three</p>
-        </li>
-        <li>
-            <p>Note Four</p>
+    <ul
+        class="rs__note-list"
+        v-if="'list' === type"
+    >
+        <li
+            v-for="note in notes"
+            :key="note.id"
+        >
+            <p>{{ note.title }}</p>
         </li>
     </ul>
 </template>
