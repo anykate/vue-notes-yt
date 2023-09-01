@@ -21,12 +21,20 @@ const handleForm = (e) => {
                 v-model="content"
                 placeholder="Note Content..."
             />
-            <button
-                type="submit"
-                class="rs__form-save-btn"
-            >
-                <span class="material-symbols-outlined">save</span>
-            </button>
+            <div class="rs__button-layout">
+                <button
+                    type="submit"
+                    class="rs__form-save-btn"
+                >
+                    <span class="material-symbols-outlined">save</span>
+                </button>
+                <button
+                    type="submit"
+                    class="rs__form-cancel-btn"
+                >
+                    <span class="material-symbols-outlined">cancel</span>
+                </button>
+            </div>
         </form>
     </div>
 </template>
