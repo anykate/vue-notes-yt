@@ -49,4 +49,14 @@ export const useNoteStore = defineStore('noteStore', {
             return state.notes.filter((note) => note.pinned)
         },
     },
+    actions: {
+        markAsPinned(id) {
+            let thisNote = this.notes.find((note) => note.id === id)
+            thisNote.pinned = true
+        },
+        markAsUnpinned(id) {
+            let thisNote = this.notes.find((note) => note.id === id)
+            thisNote.pinned = false
+        },
+    },
 })
