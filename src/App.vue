@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import Toolbar from '@/components/common/Toolbar.vue'
+</script>
 
 <template>
     <div>
-        <h1>Hello World</h1>
+        <div class="rs__notes-wrapper">
+            <Toolbar />
+        </div>
     </div>
 </template>
